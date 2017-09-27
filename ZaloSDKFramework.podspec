@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint ZaloSDKFramework.podspec' to ensure this is a
+# Be sure to run `pod spec lint ZaloSDKFramework.podspec' to ensure this is a
 # valid spec before submitting.
 #
 
@@ -26,7 +26,8 @@ Document: http://developers.zalo.me/docs/sdk/ios-sdk-9
   s.frameworks = 'UIKit', 'MapKit', 'ZaloSDKCoreKit', 'ZaloSDK'
   s.vendored_frameworks  =  'ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework', 'ZaloSDKFramework/Frameworks/ZaloSDK.framework'
   s.xcconfig = {
-      'OTHER_LDFLAGS' => '-ObjC'
+      'OTHER_LDFLAGS' => '-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit',
+      'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/** ${PODS_ROOT}/../../ZaloSDKFramework/Frameworks/**',
   }
   s.pod_target_xcconfig = {
       'OTHER_LDFLAGS' => '-ObjC'
