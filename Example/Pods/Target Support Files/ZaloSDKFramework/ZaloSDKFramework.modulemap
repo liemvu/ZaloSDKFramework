@@ -1,0 +1,6 @@
+framework module ZaloSDKFramework {
+  umbrella header "ZaloSDKFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

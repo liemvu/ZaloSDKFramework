@@ -1,0 +1,36 @@
+{
+  "name": "ZaloSDKFramework",
+  "version": "2.2.0616",
+  "summary": "Zalo SDK Framework",
+  "description": "Zalo software development kit for iOS",
+  "homepage": "https://github.com/liemvu/ZaloSDKFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Liem Vo": "liemvouy@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/liemvu/ZaloSDKFramework.git",
+    "tag": "2.2.0616"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ZaloSDKFramework/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "MapKit",
+    "ZaloSDKCoreKit",
+    "ZaloSDK"
+  ],
+  "vendored_frameworks": [
+    "ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework",
+    "ZaloSDKFramework/Frameworks/ZaloSDK.framework"
+  ],
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit",
+    "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/ZaloSDKFramework/Frameworks/** ${PODS_ROOT}/../../ZaloSDKFramework/Frameworks/**"
+  }
+}
