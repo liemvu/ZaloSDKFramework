@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 Zalo software development kit for iOS
+Document: http://developers.zalo.me/docs/sdk/ios-sdk-9
                        DESC
 
-  s.homepage         = 'https://github.com/liemvu/ZaloSDKFramework'
+  s.homepage         = 'http://developers.zalo.me/docs/sdk/ios-sdk-9'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Liem Vo' => 'liemvouy@gmail.com' }
@@ -21,17 +22,13 @@ Zalo software development kit for iOS
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'ZaloSDKFramework/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ZaloSDKFramework' => ['ZaloSDKFramework/Assets/*.png']
-  # }
-
 
   s.frameworks = 'UIKit', 'MapKit', 'ZaloSDKCoreKit', 'ZaloSDK'
   s.vendored_frameworks  =  'ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework', 'ZaloSDKFramework/Frameworks/ZaloSDK.framework'
-  # s.dependency 'AFNetworking', '~> 2.3'
   s.xcconfig = {
-      'OTHER_LDFLAGS' => '-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit',
-      'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/ZaloSDKFramework/Frameworks/** ${PODS_ROOT}/../../ZaloSDKFramework/Frameworks/**',
+      'OTHER_LDFLAGS' => '-ObjC'
+  }
+  s.pod_target_xcconfig = {
+      'OTHER_LDFLAGS' => '-ObjC'
   }
 end
