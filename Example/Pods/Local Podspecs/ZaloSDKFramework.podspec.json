@@ -29,6 +29,7 @@
     "ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework",
     "ZaloSDKFramework/Frameworks/ZaloSDK.framework"
   ],
+  "prefix_header_contents": "#import <ZaloSDK/ZaloSDK.h>",
   "xcconfig": {
     "OTHER_LDFLAGS": "-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit",
     "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/**"

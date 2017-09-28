@@ -10,3 +10,4 @@
 #endif
 #endif
 
+#import <ZaloSDK/ZaloSDK.h>

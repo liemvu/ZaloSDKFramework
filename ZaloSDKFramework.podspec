@@ -25,6 +25,7 @@ Document: http://developers.zalo.me/docs/sdk/ios-sdk-9
 
   s.frameworks = 'UIKit', 'MapKit', 'ZaloSDKCoreKit', 'ZaloSDK'
   s.vendored_frameworks  =  'ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework', 'ZaloSDKFramework/Frameworks/ZaloSDK.framework'
+  s.prefix_header_contents = '#import <ZaloSDK/ZaloSDK.h>'
   s.xcconfig = {
       'OTHER_LDFLAGS' => '-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit',
       'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/**',
