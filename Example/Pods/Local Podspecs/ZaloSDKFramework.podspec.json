@@ -18,7 +18,12 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZaloSDKFramework/Classes/**/*",
+  "source_files": [
+    "ZaloSDKFramework/ZaloSDKFramework-umbrella.h",
+    "ZaloSDKFramework/Classes/**/*"
+  ],
+  "public_header_files": "ZaloSDKFramework/ZaloSDKFramework-umbrella.h",
+  "module_map": "ZaloSDKFramework/module.modulemap",
   "frameworks": [
     "UIKit",
     "MapKit",
@@ -29,7 +34,6 @@
     "ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework",
     "ZaloSDKFramework/Frameworks/ZaloSDK.framework"
   ],
-  "prefix_header_contents": "#import <ZaloSDK/ZaloSDK.h>",
   "xcconfig": {
     "OTHER_LDFLAGS": "-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit",
     "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/**"
