@@ -29,6 +29,10 @@
     "ZaloSDKFramework/Frameworks/ZaloSDKCoreKit.framework",
     "ZaloSDKFramework/Frameworks/ZaloSDK.framework"
   ],
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC -framework ZaloSDK -framework ZaloSDKCoreKit",
+    "FRAMEWORK_SEARCH_PATHS": "${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/**"
+  },
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "-ObjC"
   }

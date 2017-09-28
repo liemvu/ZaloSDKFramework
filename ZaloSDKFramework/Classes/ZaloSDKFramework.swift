@@ -1,6 +1,6 @@
 import ZaloSDK
 
-public class ZaloSDKFramework: NSObject {
+@objc public class ZaloSDKFramework: NSObject {
     fileprivate let sdk: ZaloSDK
     public static let sharedInstance = ZaloSDKFramework()
     
@@ -24,8 +24,9 @@ extension ZaloSDKFramework {
     /// controller: The current login controller
     /// type: login by zalo app / web view, default: both
     /// callback: when login completed
-    public func authenticate(from controller: UIViewController, type: ZAZaloSDKAuthenType = ZAZAloSDKAuthenTypeViaZaloAppAndWebView, callback: @escaping AuthenCallback) {
-        sdk.authenticateZalo(with: type, parentController: controller) { (obj) in
+    public func authenticate(from controller: UIViewController, type: AuthenType = .AppOrWebView, callback: @escaping AuthenCallback) {
+        let zatype = ZAZaloSDKAuthenType(rawValue: type.rawValue)
+        sdk.authenticateZalo(with: zatype, parentController: controller) { (obj) in
             callback(obj ?? ZOOauthResponseObject.init(unknowExceptionResponseObject: ()))
         }
     }
@@ -140,7 +141,9 @@ extension ZaloSDKFramework {
 }
 
 
-
+@objc public enum AuthenType: UInt32 {
+    case App, WebView, AppOrWebView
+}
 public typealias AuthenResponse = ZOOauthResponseObject
 public typealias GraphResponse = ZOGraphResponseObject
 public typealias AuthenCallback = (AuthenResponse) -> Void

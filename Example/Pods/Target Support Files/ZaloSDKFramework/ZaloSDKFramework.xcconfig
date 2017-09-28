@@ -1,5 +1,5 @@
 CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/ZaloSDKFramework
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../ZaloSDKFramework/Frameworks"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../ZaloSDKFramework/Frameworks" ${PODS_ROOT}/ZaloSDKFramework/ZaloSDKFramework/Frameworks/**
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public"
 OTHER_LDFLAGS = -ObjC -framework "MapKit" -framework "UIKit" -framework "ZaloSDK" -framework "ZaloSDKCoreKit"
